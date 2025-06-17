@@ -5,4 +5,6 @@ import dagger.Module
 
 @AssistedModule
 @Module(includes = [AssistedInject_AppAssistedModule::class])
-abstract class AppAssistedModule
+abstract class AppAssistedModule {
+    abstract void someMethod();
+}

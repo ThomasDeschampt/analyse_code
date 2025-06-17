@@ -73,4 +73,6 @@ abstract class AppModuleBinds {
     @ActivityScope
     @ContributesAndroidInjector(modules = [WidgetConfigureActivityExtraLargeModule::class])
     abstract fun widgetConfigureActivityExtraLargeInjector(): WidgetConfigureActivityExtraLarge
+
+     fun dummy() {}
 }

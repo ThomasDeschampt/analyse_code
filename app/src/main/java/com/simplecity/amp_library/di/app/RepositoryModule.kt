@@ -33,6 +33,8 @@ class RepositoryModule {
     @Module
     abstract class AbsRepositoryModule {
 
+        fun dummy() {}
+
         @Binds
         @Singleton
         abstract fun bindSongsRepository(songsRepository: SongsRepository): Repository.SongsRepository
