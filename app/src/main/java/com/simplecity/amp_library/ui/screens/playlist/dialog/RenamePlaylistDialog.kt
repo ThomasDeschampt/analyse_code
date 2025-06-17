@@ -55,14 +55,18 @@ class RenamePlaylistDialog : DialogFragment() {
         val dialog = builder.build()
 
         val textWatcher = object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                // a mediter
+            }
 
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
                 // check if playlist with current name exists already, and warn the user if so.
                 setSaveButton(dialog, playlist, editText.text.toString())
             }
 
-            override fun afterTextChanged(s: Editable) {}
+            override fun afterTextChanged(s: Editable) {
+                // a mediter
+            }
         }
 
         editText.addTextChangedListener(textWatcher)

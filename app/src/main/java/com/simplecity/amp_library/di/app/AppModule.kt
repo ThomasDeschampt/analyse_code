@@ -73,5 +73,8 @@ abstract class AppModuleBinds {
     @ContributesAndroidInjector(modules = [WidgetConfigureActivityExtraLargeModule::class])
     abstract fun widgetConfigureActivityExtraLargeInjector(): WidgetConfigureActivityExtraLarge
 
-     fun dummy() {}
+     fun dummy() {
+        // This is a dummy function to ensure that the module is not empty.
+        // It can be removed if no other methods are added in the future.
+     }
 }

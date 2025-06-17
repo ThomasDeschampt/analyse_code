@@ -32,7 +32,10 @@ class RepositoryModule {
     @Module
     abstract class AbsRepositoryModule {
 
-        fun dummy() {}
+        fun dummy() {
+            // This is a dummy function to ensure that Dagger recognizes this as a module.
+            // It can be removed if no other methods are added to this module.
+        }
 
         @Binds
         @Singleton
