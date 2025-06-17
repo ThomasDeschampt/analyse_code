@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import com.simplecity.amp_library.ShuttleApplication;
 import io.reactivex.Completable;
 import java.io.File;
+import java.util.logging.Logger;
 
 public class LegacyUtils {
 
@@ -24,16 +25,16 @@ public class LegacyUtils {
                         for (File child : files) {
                             boolean deleted = child.delete();
                             if (deleted) {
-                                System.out.println("Le fichier/enfant a été supprimé avec succès.");
+                                logger.warning("Le fichier/enfant a été supprimé avec succès.");
                             } else {
-                                System.out.println("Échec de la suppression du fichier/enfant.");
+                                logger.warning("Échec de la suppression du fichier/enfant.");
                             }
                         }
                     }
                     if (file.delete()) {
-                        System.out.println("Fichier supprimé avec succès.");
+                        logger.warning("Le fichier a été supprimé avec succès.");
                     } else {
-                        System.out.println("Échec de la suppression du fichier.");
+                        logger.warning("Échec de la suppression du fichier.");
                     }
                 }
             }
@@ -42,9 +43,9 @@ public class LegacyUtils {
             File oldHttpCache = application.getDiskCacheDir("http");
             if (oldHttpCache != null && oldHttpCache.exists()) {
                 if (oldHttpCache.delete()) {
-                    System.out.println("Cache supprimé avec succès.");
+                    logger.warning("Le cache HTTP a été supprimé avec succès.");
                 } else {
-                    System.out.println("Échec de la suppression du cache.");
+                    logger.warning("Échec de la suppression du cache HTTP.");
                 }
             }
 
@@ -52,9 +53,9 @@ public class LegacyUtils {
             File oldThumbsCache = application.getDiskCacheDir("thumbs");
             if (oldThumbsCache != null && oldThumbsCache.exists()) {
                 if (oldThumbsCache.delete()) {
-                    System.out.println("Cache supprimé avec succès.");
+                    logger.warning("Le cache a été supprimé avec succès.");
                 } else {
-                    System.out.println("Échec de la suppression du cache.");
+                    logger.warning("Échec de la suppression du cache.");
                 }
             }
         });

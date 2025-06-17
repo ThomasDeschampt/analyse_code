@@ -247,13 +247,6 @@ public class QCircleActivity extends BaseActivity {
         textTwo = findViewById(R.id.text2);
     }
 
-    public void setPauseButtonImage() {
-
-        if (pauseBtn == null) {
-            return;
-        }
-    }
-
     private void initializeBackButton() {
         backBtn = findViewById(R.id.back_btn);
         backBtn.setOnClickListener(v -> QCircleActivity.this.finish());

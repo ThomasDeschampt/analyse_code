@@ -18,6 +18,7 @@ import java.io.IOException;
 import java.nio.channels.FileChannel;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class TaggerUtils {
 
@@ -176,12 +177,12 @@ public class TaggerUtils {
             try {
                 boolean created = destFile.createNewFile();
                 if (created) {
-                    System.out.println("Fichier créé avec succès.");
+                    logger.warning("Fichier créé avec succès.");
                 } else {
-                    System.out.println("Le fichier existe déjà.");
+                    logger.warning("Le fichier existe déjà");
                 }
             } catch (IOException e) {
-                System.out.println("Une erreur est survenue lors de la création du fichier : " + e.getMessage());
+                logger.warning("Une erreur est survenue lors de la création du fichier : " + e.getMessage());
             }
         }
 

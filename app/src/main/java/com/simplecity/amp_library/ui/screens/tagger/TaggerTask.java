@@ -19,6 +19,7 @@ import org.jaudiotagger.audio.exceptions.InvalidAudioFrameException;
 import org.jaudiotagger.audio.exceptions.ReadOnlyFileException;
 import org.jaudiotagger.tag.Tag;
 import org.jaudiotagger.tag.TagException;
+import java.util.logging.Logger;
 
 public class TaggerTask extends AsyncTask<Object, Integer, Boolean> {
 
@@ -170,9 +171,9 @@ public class TaggerTask extends AsyncTask<Object, Integer, Boolean> {
                     for (int j = tempFiles.size() - 1; j >= 0; j--) {
                         File file = tempFiles.get(j);
                         if (file.delete()) {
-                            System.out.println("Le fichier a été supprimé avec succès.");
+                            logger.warning("Le fichier a été supprimé avec succès.");
                         } else {
-                            System.out.println("Échec de la suppression du fichier.");
+                            logger.warning("Échec de la suppression du fichier");
                         }
 
                         tempFiles.remove(j);
