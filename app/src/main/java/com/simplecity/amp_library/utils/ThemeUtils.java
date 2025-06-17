@@ -11,6 +11,8 @@ public class ThemeUtils {
     private ThemeUtils() {
         //no instance
     }
+    private static final Random random = new Random();
+
 
     public static Theme getRandom() {
 
@@ -28,7 +30,7 @@ public class ThemeUtils {
         themes.add(new Theme(6, "grey_900", "teal_A700", false, R.color.md_grey_900, R.color.md_teal_A700));
         themes.add(new Theme(7, "grey_900", "teal_A700", true, R.color.md_grey_900, R.color.md_teal_A700));
 
-        return themes.get(new Random().nextInt(themes.size()));
+        return themes.get(random.nextInt(themes.size()));
     }
 
     public static class Theme {
