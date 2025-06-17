@@ -26,7 +26,7 @@ public class AlbumArtist implements
 
     public String name;
 
-    public List<Album> albums = new ArrayList<>();
+    private List<Album> albums = new ArrayList<>();
 
     private String sortKey;
 

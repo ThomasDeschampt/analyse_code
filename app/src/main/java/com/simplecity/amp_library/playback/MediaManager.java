@@ -65,13 +65,13 @@ public class MediaManager {
             setShuffleMode(QueueManager.ShuffleMode.OFF);
         }
 
-        if (songs.size() == 0
-                || MusicServiceConnectionUtils.serviceBinder == null
-                || MusicServiceConnectionUtils.serviceBinder.getService() == null) {
+            if (songs.isEmpty()
+            || MusicServiceConnectionUtils.serviceBinder == null
+            || MusicServiceConnectionUtils.serviceBinder.getService() == null) {
 
-            onEmpty.invoke();
-            return;
-        }
+        onEmpty.invoke();
+        return;
+    }
 
         if (position < 0) {
             position = 0;

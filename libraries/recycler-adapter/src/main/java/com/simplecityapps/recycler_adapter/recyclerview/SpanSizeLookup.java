@@ -7,7 +7,7 @@ import com.simplecityapps.recycler_adapter.model.ViewModel;
 
 import java.util.List;
 
-public class SpanSizeLookup extends GridLayoutManager.SpanSizeLookup {
+public class SpanSizeLookupTest extends GridLayoutManager.SpanSizeLookup {
 
     private ViewModelAdapter viewModelAdapter;
 

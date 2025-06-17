@@ -259,12 +259,14 @@ public class EqualizerFragment extends BaseFragment implements
                     if (fromUser) {
                         //Determine which band changed
                         int seekbarId = seekBar.getId();
-                        int band = 0;
+                        int band = -1;  // -1 pour signaler que ce n’est pas trouvé
                         for (int i = 0; i < eqViewElementIds.length; i++) {
                             if (eqViewElementIds[i][1] == seekbarId) {
                                 band = i;
+                                break;  // on sort de la boucle dès qu’on trouve
                             }
                         }
+
 
                         if (eqPreset != eqCustomPresetPosition) {
                             equalizerCopyToCustom();
