@@ -8,7 +8,7 @@ import io.reactivex.disposables.Disposable;
 
 public class DragHandle extends AestheticTintedImageView {
 
-    private Disposable aestheticDisposable;
+    private Disposable aestheticDisposabletest;
 
     public DragHandle(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -46,7 +46,7 @@ public class DragHandle extends AestheticTintedImageView {
 
     @Override
     protected void onDetachedFromWindow() {
-        aestheticDisposable.dispose();
+        aestheticDisposabletest.dispose();
         super.onDetachedFromWindow();
     }
 }

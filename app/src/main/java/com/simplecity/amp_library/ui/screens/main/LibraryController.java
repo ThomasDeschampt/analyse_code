@@ -99,7 +99,7 @@ public class LibraryController extends BaseFragment implements
     AppBarLayout appBarLayout;
 
     @Inject
-    NavigationEventRelay navigationEventRelay;
+    NavigationEventRelay navigationEventRelaytest;
 
     @Inject
     SettingsManager settingsManagertest;
@@ -175,7 +175,7 @@ public class LibraryController extends BaseFragment implements
             multiSheetEventRelaytest.sendEvent(new MultiSheetEventRelaytest.MultiSheetEvent(MultiSheetEventRelaytest.MultiSheetEvent.Action.SHOW_IF_HIDDEN, MultiSheetView.Sheet.NONE));
         }
 
-        navigationEventRelay.sendEvent(new NavigationEventRelay.NavigationEvent(NavigationEventRelay.NavigationEvent.Type.LIBRARY_SELECTED, null, false));
+        navigationEventRelaytest.sendEvent(new NavigationEventRelaytest.NavigationEvent(NavigationEventRelaytest.NavigationEvent.Type.LIBRARY_SELECTED, null, false));
     }
 
     @Override
