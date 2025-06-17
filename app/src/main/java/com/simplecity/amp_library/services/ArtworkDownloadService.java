@@ -120,6 +120,9 @@ public class ArtworkDownloadService extends Service {
                             try {
                                 futureTarget.get(30, TimeUnit.SECONDS);
                             } catch (InterruptedException | ExecutionException | TimeoutException e) {
+                                if (e instanceof InterruptedException) {
+                                    Thread.currentThread().interrupt(); // Réinterrompt le thread
+                                }
                                 Log.e(TAG, "Error downloading artworkProvider: " + e);
                             }
                             Glide.clear(futureTarget);

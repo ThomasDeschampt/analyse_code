@@ -37,6 +37,8 @@ public class MediaManager {
 
     private AnalyticsManager analyticsManager;
 
+    private static final Random RANDOM = new Random();
+
     private SettingsManager settingsManager;
 
     @Inject
@@ -91,7 +93,7 @@ public class MediaManager {
         analyticsManager.dropBreadcrumb(TAG, "shuffleAll()");
         setShuffleMode(QueueManager.ShuffleMode.ON);
         if (!songs.isEmpty()) {
-            playAll(songs, new Random().nextInt(songs.size()), false, onEmpty);
+            playAll(songs, RANDOM.nextInt(songs.size()), false, onEmpty);
         }
     }
 
