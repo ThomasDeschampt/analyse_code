@@ -12,10 +12,11 @@ import java.util.List;
 public class LoggingViewModelAdapter extends ViewModelAdapter {
 
     private static final String TAG = "LoggingVMAdapter";
-    String tag;
+    String instanceTag;
 
-    public LoggingViewModelAdapter(String tag) {
-        this.tag = tag;
+
+    public LoggingViewModelAdapter(String instanceTag) {
+        this.instanceTag = instanceTag;
     }
 
     @Nullable

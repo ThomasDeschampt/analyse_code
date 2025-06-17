@@ -294,18 +294,22 @@ public class StringUtils {
         }
         final char[] ms1 = new char[matches];
         final char[] ms2 = new char[matches];
-        for (int i = 0, si = 0; i < min.length(); i++) {
+        int si = 0;
+        for (int i = 0; i < min.length(); i++) {
             if (matchIndexes[i] != -1) {
                 ms1[si] = min.charAt(i);
                 si++;
             }
         }
-        for (int i = 0, si = 0; i < max.length(); i++) {
+
+        si = 0;
+        for (int i = 0; i < max.length(); i++) {
             if (matchFlags[i]) {
                 ms2[si] = max.charAt(i);
                 si++;
             }
         }
+
         int transpositions = 0;
         for (int mi = 0; mi < ms1.length; mi++) {
             if (ms1[mi] != ms2[mi]) {

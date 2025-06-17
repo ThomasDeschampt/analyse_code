@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class PaletteTarget {
 
     @BitmapPalette.Profile
-    protected int paletteProfile = GlidePalette.Profile.VIBRANT;
+    protected int paletteProfile = BitmapPalette.Profile.VIBRANT;
 
     protected ArrayList<Pair<View, Integer>> targetsBackground = new ArrayList<>();
     protected ArrayList<Pair<TextView, Integer>> targetsText = new ArrayList<>();

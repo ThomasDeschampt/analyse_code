@@ -66,7 +66,7 @@ public class GlidePalette<ModelType, TranscodeType> extends BitmapPalette implem
     }
 
     @Override
-    public GlidePalette<ModelType, TranscodeType> intoCallBack(GlidePalette.CallBack callBack) {
+   public GlidePalette<ModelType, TranscodeType> intoCallBack(BitmapPalette.CallBack callBack) {
         super.intoCallBack(callBack);
         return this;
     }

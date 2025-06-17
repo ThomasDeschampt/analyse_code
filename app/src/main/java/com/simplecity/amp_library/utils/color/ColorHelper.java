@@ -500,11 +500,23 @@ public class ColorHelper {
         }
 
         private static int constrain(int amount, int low, int high) {
-            return amount < low ? low : (amount > high ? high : amount);
+            if (amount < low) {
+                return low;
+            } else if (amount > high) {
+                return high;
+            } else {
+                return amount;
+            }
         }
 
         private static float constrain(float amount, float low, float high) {
-            return amount < low ? low : (amount > high ? high : amount);
+            if (amount < low) {
+                return low;
+            } else if (amount > high) {
+                return high;
+            } else {
+                return amount;
+            }
         }
 
         private static double pivotXyzComponent(double component) {

@@ -32,9 +32,7 @@ internal class MediaPlayerPlayback(context: Context) : LocalPlayback(context), M
         get() = synchronized(this) {
             if (isInitialized && !isFadingDown)
                 currentMediaPlayer?.isPlaying ?: false || isFadingUp
-            else
-                false
-        }
+        } 
 
 
 
