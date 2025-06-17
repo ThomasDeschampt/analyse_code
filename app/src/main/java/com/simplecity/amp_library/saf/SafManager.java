@@ -255,7 +255,7 @@ public class SafManager {
         }
 
         public SafDialog() {
-
+            //methode vide pour le moment
         }
 
         public static <T extends AppCompatActivity & SafResultListener> void show(T activity) {

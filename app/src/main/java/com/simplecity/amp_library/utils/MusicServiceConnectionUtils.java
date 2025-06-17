@@ -15,7 +15,7 @@ public class MusicServiceConnectionUtils {
 
     private static final String TAG = "MusicServiceConnectionU";
 
-    public static LocalBinder serviceBinder = null;
+    public static final LocalBinder serviceBinder = null;
 
     private static final WeakHashMap<Context, ServiceBinder> connectionMap = new WeakHashMap<>();
 

@@ -98,7 +98,7 @@ public class MainController extends BaseNavigationController implements BackPres
     }
 
     public MainController() {
-
+        //methode vide pour le moment
     }
 
     @Override

@@ -20,7 +20,7 @@ public class DrawerDivider implements Parent<DrawerChild> {
     }
 
     public void bindView() {
-
+        //methode vide pour le moment
     }
 
     static class DividerHolder extends ParentViewHolder {

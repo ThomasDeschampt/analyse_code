@@ -125,6 +125,7 @@ public class LibraryController extends BaseFragment implements
     }
 
     public LibraryController() {
+        //methode vide pour le moment
     }
 
     @Override

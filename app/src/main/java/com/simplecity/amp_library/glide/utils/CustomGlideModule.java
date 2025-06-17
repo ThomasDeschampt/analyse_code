@@ -11,12 +11,12 @@ import java.io.InputStream;
 public class CustomGlideModule implements GlideModule {
 
     public CustomGlideModule() {
-
+        //methode vide pour le moment
     }
 
     @Override
     public void applyOptions(Context context, GlideBuilder builder) {
-
+        //methode vide pour le moment
     }
 
     @Override
