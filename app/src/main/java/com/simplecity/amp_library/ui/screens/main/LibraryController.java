@@ -102,13 +102,13 @@ public class LibraryController extends BaseFragment implements
     NavigationEventRelay navigationEventRelay;
 
     @Inject
-    SettingsManager settingsManager;
+    SettingsManager settingsManagertest;
 
     @Inject
-    MultiSheetEventRelay multiSheetEventRelay;
+    MultiSheetEventRelay multiSheetEventRelaytest;
 
     @Inject
-    AnalyticsManager analyticsManager;
+    AnalyticsManager analyticsManagertest;
 
     private CompositeDisposable compositeDisposable = new CompositeDisposable();
 
@@ -172,7 +172,7 @@ public class LibraryController extends BaseFragment implements
         super.onResume();
 
         if (!mediaManager.getQueue().isEmpty()) {
-            multiSheetEventRelay.sendEvent(new MultiSheetEventRelay.MultiSheetEvent(MultiSheetEventRelay.MultiSheetEvent.Action.SHOW_IF_HIDDEN, MultiSheetView.Sheet.NONE));
+            multiSheetEventRelaytest.sendEvent(new MultiSheetEventRelaytest.MultiSheetEvent(MultiSheetEventRelaytest.MultiSheetEvent.Action.SHOW_IF_HIDDEN, MultiSheetView.Sheet.NONE));
         }
 
         navigationEventRelay.sendEvent(new NavigationEventRelay.NavigationEvent(NavigationEventRelay.NavigationEvent.Type.LIBRARY_SELECTED, null, false));
@@ -198,7 +198,7 @@ public class LibraryController extends BaseFragment implements
 
         inflater.inflate(R.menu.menu_library, menu);
 
-        if (CastManager.isCastAvailable(getContext(), settingsManager)) {
+        if (CastManager.isCastAvailable(getContext(), settingsManagertest)) {
             MenuItem menuItem = CastButtonFactory.setUpMediaRouteButton(getContext(), menu, R.id.media_route_menu_item);
             menuItem.setVisible(true);
         }
@@ -231,7 +231,7 @@ public class LibraryController extends BaseFragment implements
                 .filter(categoryItem -> categoryItem.isChecked)
                 .toList();
 
-        int defaultPageType = settingsManager.getDefaultPageType();
+        int defaultPageType = settingsManagertest.getDefaultPageType();
         for (int i = 0; i < categoryItems.size(); i++) {
             CategoryItem categoryItem = categoryItems.get(i);
             pagerAdapter.addFragment(categoryItem.getFragment(getContext()));
@@ -249,7 +249,7 @@ public class LibraryController extends BaseFragment implements
 
         pager.postDelayed(() -> {
             if (pager != null) {
-                new RatingSnackbar(settingsManager, analyticsManager).show(pager, () -> {
+                new RatingSnackbar(settingsManagertest, analyticsManagertest).show(pager, () -> {
                     ShuttleUtils.openShuttleLink(getActivity(), getActivity().getPackageName(), getActivity().getPackageManager());
                     return Unit.INSTANCE;
                 });
