@@ -9,7 +9,6 @@ import com.afollestad.materialdialogs.MaterialDialog
 import com.android.billingclient.api.BillingClient
 import com.simplecity.amp_library.R
 import com.simplecity.amp_library.billing.BillingManager
-import com.simplecity.amp_library.constants.Config
 import com.simplecity.amp_library.utils.ShuttleUtils
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject

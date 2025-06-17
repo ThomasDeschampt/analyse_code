@@ -13,7 +13,6 @@ import com.simplecity.amp_library.di.app.activity.fragment.FragmentModule
 import com.simplecity.amp_library.di.app.activity.fragment.FragmentScope
 import com.simplecity.amp_library.model.Playlist
 import dagger.Binds
-import dagger.Module
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 import javax.inject.Named
@@ -63,6 +62,8 @@ class DeletePlaylistConfirmationDialog : DialogFragment() {
 
 @Module(includes = [FragmentModule::class])
 abstract class DeletePlaylistConfirmationDialogFragmentModule {
+
+    fun dummy() {}
 
     @Binds
     @Named(FragmentModule.FRAGMENT)

@@ -10,7 +10,6 @@ import android.view.LayoutInflater
 import android.widget.NumberPicker
 import com.afollestad.materialdialogs.MaterialDialog
 import com.simplecity.amp_library.R
-import com.simplecity.amp_library.model.Playlist
 import com.simplecity.amp_library.utils.SettingsManager
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject

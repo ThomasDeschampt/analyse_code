@@ -8,7 +8,6 @@ import android.support.v4.util.Pair
 import android.support.v4.view.ViewCompat
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.PopupMenu
-import android.support.v7.widget.SearchView
 import android.transition.TransitionInflater
 import android.view.LayoutInflater
 import android.view.MenuItem

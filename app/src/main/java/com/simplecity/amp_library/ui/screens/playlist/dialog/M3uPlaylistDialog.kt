@@ -18,7 +18,6 @@ import com.simplecity.amp_library.model.Playlist
 import com.simplecity.amp_library.model.Song
 import com.simplecity.amp_library.utils.LogUtils
 import dagger.Binds
-import dagger.Module
 import dagger.android.support.AndroidSupportInjection
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
@@ -156,6 +155,8 @@ class M3uPlaylistDialog : DialogFragment() {
 
 @Module(includes = arrayOf(FragmentModule::class))
 abstract class M3uDialogFragmentModule {
+
+    fun dummy() {}
 
     @Binds
     @Named(FragmentModule.FRAGMENT)

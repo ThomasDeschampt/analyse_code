@@ -15,7 +15,6 @@ import android.widget.LinearLayout
 import com.afollestad.aesthetic.Aesthetic
 import com.afollestad.aesthetic.ColorIsDarkState
 import com.afollestad.aesthetic.LightDarkColorState
-import com.afollestad.materialdialogs.MaterialDialog
 import com.bumptech.glide.Glide
 import com.bumptech.glide.Priority
 import com.bumptech.glide.load.engine.DiskCacheStrategy
