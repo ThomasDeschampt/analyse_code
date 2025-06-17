@@ -72,11 +72,7 @@ public class PlayPauseView extends FrameLayout {
         backgroundColor = color;
         invalidate();
     }
-
-    private int getColor() {
-        return backgroundColor;
-    }
-
+    
     public void setDrawableColor(int color) {
         drawable.setColor(color);
         invalidate();

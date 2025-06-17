@@ -71,23 +71,21 @@ public class MultiSheetView extends CoordinatorLayout {
             }
         });
 
-        View sheet2 = findViewById(R.id.sheet2);
-        bottomSheetBehavior2 = (CustomBottomSheetBehavior) BottomSheetBehavior.from(sheet2);
-        bottomSheetBehavior2.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
-            @Override
-            public void onStateChanged(@NonNull View bottomSheet, int newState) {
-                if (newState == BottomSheetBehavior.STATE_EXPANDED || newState == BottomSheetBehavior.STATE_DRAGGING) {
-                    bottomSheetBehavior1.setAllowDragging(false);
-                } else {
-                    bottomSheetBehavior1.setAllowDragging(true);
-                }
+            View sheet2 = findViewById(R.id.sheet2);
+            bottomSheetBehavior2 = (CustomBottomSheetBehavior) BottomSheetBehavior.from(sheet2);
+            bottomSheetBehavior2.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
+                @Override
+                public void onStateChanged(@NonNull View bottomSheet, int newState) {
+                    bottomSheetBehavior1.setAllowDragging(!(newState == BottomSheetBehavior.STATE_EXPANDED || newState == BottomSheetBehavior.STATE_DRAGGING));
 
-                fadeView(Sheet.SECOND, newState);
+                    fadeView(Sheet.SECOND, newState);
 
-                if (sheetStateChangeListener != null) {
-                    sheetStateChangeListener.onSheetStateChanged(Sheet.SECOND, newState);
+                    if (sheetStateChangeListener != null) {
+                        sheetStateChangeListener.onSheetStateChanged(Sheet.SECOND, newState);
+                    }
                 }
-            }
+            });
+
 
             @Override
             public void onSlide(@NonNull View bottomSheet, float slideOffset) {

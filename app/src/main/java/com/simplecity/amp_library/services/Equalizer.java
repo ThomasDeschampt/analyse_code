@@ -304,8 +304,8 @@ public class Equalizer {
      */
     public synchronized void update() {
         try {
-            for (Integer sessionId : mAudioSessions.keySet()) {
-                updateDsp(mAudioSessions.get(sessionId));
+            for (Map.Entry<Integer, AudioSessionType> entry : mAudioSessions.entrySet()) {
+                updateDsp(entry.getValue());
             }
         } catch (NoSuchMethodError e) {
             Crashlytics.log("No such method error thrown when updating equalizer.. " + e.getMessage());

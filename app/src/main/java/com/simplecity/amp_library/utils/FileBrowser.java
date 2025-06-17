@@ -66,9 +66,6 @@ public class FileBrowser {
                                 ((FolderObject) baseFileObject).fileCount++;
                             }
                         }
-                    } else {
-                        continue;
-                    }
                     if (!folderObjects.contains(baseFileObject)) {
                         folderObjects.add(baseFileObject);
                     }
