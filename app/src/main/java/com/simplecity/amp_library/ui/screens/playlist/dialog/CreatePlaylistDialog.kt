@@ -94,13 +94,13 @@ class CreatePlaylistDialog : DialogFragment() {
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(
-                            { id ->
-                                val uri: Uri?
-                                if (id >= 0) {
-                                    uri = ContentUris.withAppendedId(MediaStore.Audio.Playlists.EXTERNAL_CONTENT_URI, id!!.toLong())
-                                    val uri1 = MediaStore.Audio.Playlists.Members.getContentUri("external", id as Long)
-                                    context!!.contentResolver.delete(uri1, null, null)
-                                } else {
+                        { id ->
+                            val uri: Uri?
+                            if (id >= 0) {
+                                uri = ContentUris.withAppendedId(MediaStore.Audio.Playlists.EXTERNAL_CONTENT_URI, id.toLong())
+                                val uri1 = MediaStore.Audio.Playlists.Members.getContentUri("external", id.toLong())
+                                context!!.contentResolver.delete(uri1, null, null)
+                            } else {
                                     val values = ContentValues(1)
                                     values.put(MediaStore.Audio.Playlists.NAME, name)
                                     uri = try {

@@ -86,11 +86,11 @@ class PlaylistListFragment :
         presenter.loadData()
     }
 
-    override fun onPause() {
+   override fun onPause() {
         super.onPause()
 
-        refreshDisposable?.dispose()
-
+        refreshDisposable.dispose()
+        
         disposables.clear()
     }
 

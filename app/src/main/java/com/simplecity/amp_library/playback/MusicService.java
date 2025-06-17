@@ -288,22 +288,26 @@ public class MusicService extends MediaBrowserServiceCompat {
         return true;
     }
 
+    private boolean manuallyPaused = false;
+
+    public void onManualPause() {
+        manuallyPaused = true;
+    }
+
     @Override
     public void onTaskRemoved(Intent rootIntent) {
         analyticsManager.dropBreadcrumb(TAG, "onTaskRemoved()");
 
-        // Fixme:
-        //  playbackManager.willResumePlayback() returns true even after we've manually paused.
-        //  This means we don't call stopSelf(), which in turn causes the service to act as if it has crashed, and will recreate itself unnecessarily.
-
-        if (!isPlaying() && !playbackManager.willResumePlayback()) {
+        // On arrête le service si on ne joue pas, et soit la lecture ne va pas reprendre,
+        // soit on a fait une pause manuelle (pour contourner le bug de willResumePlayback)
+        if (!isPlaying() && (!playbackManager.willResumePlayback() || manuallyPaused)) {
             analyticsManager.dropBreadcrumb(TAG, "stopSelf() called");
             stopSelf();
+            manuallyPaused = false; // reset du flag après l'arrêt du service
         }
 
         super.onTaskRemoved(rootIntent);
     }
-
     @Override
     public void onDestroy() {
         analyticsManager.dropBreadcrumb(TAG, "onDestroy()");
