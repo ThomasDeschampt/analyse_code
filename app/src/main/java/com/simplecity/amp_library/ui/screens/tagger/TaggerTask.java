@@ -135,9 +135,6 @@ public class TaggerTask extends AsyncTask<Object, Integer, Boolean> {
 
                         audioFile = AudioFileIO.read(temp);
                         tag = audioFile.getTag();
-                        if (tag == null) {
-                            break;
-                        }
                     }
 
                     tagUpdate.updateTag(tag);

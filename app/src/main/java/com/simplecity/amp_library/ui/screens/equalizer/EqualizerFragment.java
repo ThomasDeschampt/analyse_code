@@ -256,17 +256,20 @@ public class EqualizerFragment extends BaseFragment implements
                 @Override
                 public void onProgressChanged(final SeekBar seekBar, final int progress, final boolean fromUser) {
 
-                    if (fromUser) {
-                        //Determine which band changed
-                        int seekbarId = seekBar.getId();
-                        int band = -1;  // -1 pour signaler que ce n’est pas trouvé
+                    int band = findBandIndex(seekBar.getId());
+
+                    if (fromUser && band != -1) {
+                        // utiliser band ici
+                    }
+
+                    private int findBandIndex(int seekbarId) {
                         for (int i = 0; i < eqViewElementIds.length; i++) {
                             if (eqViewElementIds[i][1] == seekbarId) {
-                                band = i;
-                                break;  // on sort de la boucle dès qu’on trouve
+                                return i;
                             }
                         }
-
+                        return -1;
+                    }
 
                         if (eqPreset != eqCustomPresetPosition) {
                             equalizerCopyToCustom();

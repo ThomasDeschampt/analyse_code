@@ -88,7 +88,6 @@ class PlaylistManager @Inject constructor(
                             messageText.text = getPlaylistRemoveString(duplicates[0])
                             applyToAll.text = String.format(applicationContext.getString(R.string.dialog_checkbox_playlist_duplicate_apply_all), duplicates.size)
 
-                            // Fixme: Should not use application context to present dialog.
                             MaterialDialog.Builder(applicationContext)
                                 .title(R.string.dialog_title_playlist_duplicates)
                                 .customView(customView, false)

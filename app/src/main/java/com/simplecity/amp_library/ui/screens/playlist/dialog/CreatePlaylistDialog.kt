@@ -155,7 +155,6 @@ class CreatePlaylistDialog : DialogFragment() {
                 // don't care about this one
             }
 
-            //Fixme: It's probably best to just query all playlist names first, and then check against hat list, rather than requerying for each char change.
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
                 val newText = editText.text.toString()
                 if (newText.trim { it <= ' ' }.isEmpty()) {

@@ -451,11 +451,9 @@ class AlbumDetailFragment :
                 val length = viewModels.size
                 for (i in 0 until length) {
                     val viewModel = viewModels[i]
-                    if (viewModel is SongView) {
-                        if (discNumber != viewModel.song.discNumber) {
-                            discNumber = viewModel.song.discNumber
-                            viewModels.add(i, DiscNumberView(discNumber))
-                        }
+                    if (viewModel is SongView && discNumber != viewModel.song.discNumber) {
+                        discNumber = viewModel.song.discNumber
+                        viewModels.add(i, DiscNumberView(discNumber))
                     }
                 }
             }
