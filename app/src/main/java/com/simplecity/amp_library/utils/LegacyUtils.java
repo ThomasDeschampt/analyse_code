@@ -22,23 +22,40 @@ public class LegacyUtils {
                     File[] files = file.listFiles();
                     if (files != null) {
                         for (File child : files) {
-                            child.delete();
+                            boolean deleted = child.delete();
+                            if (deleted) {
+                                System.out.println("Le fichier/enfant a été supprimé avec succès.");
+                            } else {
+                                System.out.println("Échec de la suppression du fichier/enfant.");
+                            }
                         }
                     }
-                    file.delete();
+                    if (file.delete()) {
+                        System.out.println("Fichier supprimé avec succès.");
+                    } else {
+                        System.out.println("Échec de la suppression du fichier.");
+                    }
                 }
             }
 
             //Delete old http cache
             File oldHttpCache = application.getDiskCacheDir("http");
             if (oldHttpCache != null && oldHttpCache.exists()) {
-                oldHttpCache.delete();
+                if (oldHttpCache.delete()) {
+                    System.out.println("Cache supprimé avec succès.");
+                } else {
+                    System.out.println("Échec de la suppression du cache.");
+                }
             }
 
             //Delete old thumbs cache
             File oldThumbsCache = application.getDiskCacheDir("thumbs");
             if (oldThumbsCache != null && oldThumbsCache.exists()) {
-                oldThumbsCache.delete();
+                if (oldThumbsCache.delete()) {
+                    System.out.println("Cache supprimé avec succès.");
+                } else {
+                    System.out.println("Échec de la suppression du cache.");
+                }
             }
         });
     }

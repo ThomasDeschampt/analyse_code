@@ -169,7 +169,12 @@ public class TaggerTask extends AsyncTask<Object, Integer, Boolean> {
                 if (tempFiles != null && tempFiles.size() != 0) {
                     for (int j = tempFiles.size() - 1; j >= 0; j--) {
                         File file = tempFiles.get(j);
-                        file.delete();
+                        if (file.delete()) {
+                            System.out.println("Le fichier a été supprimé avec succès.");
+                        } else {
+                            System.out.println("Échec de la suppression du fichier.");
+                        }
+
                         tempFiles.remove(j);
                     }
                 }

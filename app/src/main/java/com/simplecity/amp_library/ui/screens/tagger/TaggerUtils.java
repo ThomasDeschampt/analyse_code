@@ -173,7 +173,16 @@ public class TaggerUtils {
         }
 
         if (!destFile.exists()) {
-            destFile.createNewFile();
+            try {
+                boolean created = destFile.createNewFile();
+                if (created) {
+                    System.out.println("Fichier créé avec succès.");
+                } else {
+                    System.out.println("Le fichier existe déjà.");
+                }
+            } catch (IOException e) {
+                System.out.println("Une erreur est survenue lors de la création du fichier : " + e.getMessage());
+            }
         }
 
         FileChannel source = null;
